@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rıdvan Tunçel - Senior Python Backend Developer CV" />
+
+  <title>CV - Rıdvan TUNÇEL</title>
+
+  <style>
+    :root {
+      --text: #1f1f1f;
+      --muted: #5a5a5a;
+      --accent: #2c3e50;
+      --line: #9e9e9e;
+      --bg: #f4f4f4;
+      --paper: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Georgia", "Times New Roman", serif;
+      line-height: 1.4;
+    }
+
+    .cv {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--paper);
+      padding: 28px 34px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .header {
+      text-align: center;
+      position: relative;
+    }
+
+    .language-switcher {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      gap: 3px;
+      padding: 3px;
+      border: 1px solid #c8c8c8;
+      border-radius: 6px;
+      background: #f7f7f7;
+    }
+
+    .language-switcher button {
+      border: 0;
+      border-radius: 4px;
+      padding: 5px 8px;
+      background: transparent;
+      color: var(--muted);
+      font: 700 0.75rem Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .language-switcher button.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .language-switcher button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .header h1 {
+      margin: 0 0 4px;
+      font-size: 1.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    .header h2 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      font-weight: normal;
+      color: var(--muted);
+    }
+
+    .contact {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .summary {
+      margin: 12px 0 0;
+      font-style: italic;
+      color: #3a3a3a;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .section {
+      margin-top: 18px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 1.08rem;
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--line);
+      margin-bottom: 8px;
+      padding-bottom: 2px;
+    }
+
+    .item {
+      margin-bottom: 12px;
+    }
+
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .item-head .role {
+      font-weight: bold;
+    }
+
+    .item-head .date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .item-subtitle,
+    .tech {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin: 2px 0 3px;
+    }
+
+    ul {
+      margin: 4px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 2px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 175px 1fr;
+      gap: 4px 12px;
+      font-size: 0.9rem;
+    }
+
+    .skills-grid dt {
+      font-weight: bold;
+    }
+
+    .skills-grid dd {
+      margin: 0;
+    }
+
+    .lang-list {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+
+    .note {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-style: italic;
+    }
+
+    @page {
+      size: A4;
+      margin: 7mm;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 210mm;
+        min-height: 297mm;
+      }
+
+      body {
+        background: #fff;
+        padding: 0;
+        font-size: 10.5px;
+        line-height: 1.22;
+      }
+
+      .cv {
+        max-width: 100%;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .header h1 {
+        font-size: 1.35rem;
+      }
+
+      .language-switcher,
+      .note {
+        display: none;
+      }
+
+      .header h2 {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+      }
+
+      .contact {
+        font-size: 0.78rem;
+        line-height: 1.15;
+      }
+
+      .summary {
+        margin: 6px auto 0;
+        font-size: 0.78rem;
+        line-height: 1.18;
+      }
+
+      .section {
+        margin-top: 8px;
+      }
+
+      .section-title {
+        font-size: 0.86rem;
+        margin-bottom: 4px;
+        padding-bottom: 1px;
+        border-bottom-width: 1px;
+      }
+
+      .item {
+        margin-bottom: 5px;
+      }
+
+      .item-head .date {
+        font-size: 0.76rem;
+      }
+
+      .item-subtitle,
+      .tech {
+        font-size: 0.74rem;
+        margin: 1px 0 2px;
+      }
+
+      ul {
+        margin: 2px 0 0 14px;
+      }
+
+      li {
+        margin-bottom: 1px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 135px 1fr;
+        gap: 2px 8px;
+        font-size: 0.76rem;
+      }
+
+      .lang-list {
+        font-size: 0.76rem;
+        gap: 12px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      section,
+      .item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 0;
+        background: var(--paper);
+      }
+
+      .cv {
+        padding: 22px 18px;
+        box-shadow: none;
+      }
+
+      .header {
+        padding-top: 38px;
+      }
+
+      .language-switcher {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
+
+      .header h1 {
+        font-size: 1.6rem;
+      }
+
+      .item-head {
+        display: block;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .skills-grid dd {
+        margin-bottom: 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="cv">
+    <header class="header">
+      <div class="language-switcher" role="group" aria-label="Dil seçimi">
+        <button type="button" data-language="tr" class="active" aria-pressed="true">TR</button>
+        <button type="button" data-language="en" aria-pressed="false">EN</button>
+      </div>
+
+      <h1>Rıdvan TUNÇEL</h1>
+
+      <h2
+        data-tr="Kıdemli Python Backend Geliştirici | Backend Developer"
+        data-en="Senior Python Backend Developer | Backend Developer"
+      >Kıdemli Python Backend Geliştirici | Backend Developer</h2>
+
+      <div class="contact">
+        Bursa, Osmangazi
+        &nbsp;|&nbsp;
+        <a href="tel:+905346168124">0534 616 81 24</a>
+        &nbsp;|&nbsp;
+        <a href="mailto:ridvantuncel_88@hotmail.com">ridvantuncel_88@hotmail.com</a>
+      </div>
+
+      <p
+        class="summary"
+        data-tr="Ölçeklenebilir web uygulamaları, asenkron işlem sistemleri, oyun backend altyapıları ve yüksek hacimli veri işleme platformları geliştirme deneyimine sahip Python backend geliştiricisiyim. Python, Flask, Redis, Docker, SQL veritabanları, API geliştirme ve backend mimarileri üzerine çalışıyorum. Veritabanı mimarisinden deployment ve izlemeye kadar uçtan uca backend ekosistemleri; yönetim panelleri, gerçek zamanlı sistemler, kullanıcı yönetimi altyapıları ve mobil oyunlar için LiveOps platformları geliştiriyorum."
+        data-en="Python Backend Developer with experience in developing scalable web applications, asynchronous processing systems, game backend infrastructures, and high-volume data processing platforms. Specialized in Python, Flask, Redis, Docker, SQL databases, API development, and backend architectures. Experienced in building management panels, real-time systems, user management infrastructures, and LiveOps platforms for mobile games. Capable of designing and developing complete backend ecosystems, from database architecture to deployment and monitoring."
+      >Ölçeklenebilir web uygulamaları, asenkron işlem sistemleri, oyun backend altyapıları ve yüksek hacimli veri işleme platformları geliştirme deneyimine sahip Python backend geliştiricisiyim. Python, Flask, Redis, Docker, SQL veritabanları, API geliştirme ve backend mimarileri üzerine çalışıyorum. Veritabanı mimarisinden deployment ve izlemeye kadar uçtan uca backend ekosistemleri; yönetim panelleri, gerçek zamanlı sistemler, kullanıcı yönetimi altyapıları ve mobil oyunlar için LiveOps platformları geliştiriyorum.</p>
+    </header>
+
+    <section class="section">
+      <div
+        class="section-title"
+        data-tr="SEÇİLMİŞ PROJELER"
+        data-en="SELECTED PROJECTS"
+      >SEÇİLMİŞ PROJELER</div>
+
+      <div class="item">
+        <div class="item-head">
+          <span
+            class="role"
+            data-tr="Mobil Oyun Backend & LiveOps Platformu"
+            data-en="Mobile Game Backend & LiveOps Platform"
+          >Mobil Oyun Backend &amp; LiveOps Platformu</span>
+        </div>
+
+        <div
+          class="tech"
+          data-tr="Python, Flask, REST API, SQL, Redis, Unity entegrasyonları, Google Play"
+          data-en="Python, Flask, REST API, SQL, Redis, Unity integrations, Google Play"
+        >Python, Flask, REST API, SQL, Redis, Unity entegrasyonları, Google Play</div>
+
+        <ul>
+          <li data-tr="Unity tabanlı mobil oyunlar için birden fazla oyunu destekleyen eksiksiz backend API altyapısı geliştirdim." data-en="Developed backend APIs for multiple Unity-based mobile games.">Unity tabanlı mobil oyunlar için birden fazla oyunu destekleyen eksiksiz backend API altyapısı geliştirdim.</li>
+          <li data-tr="Oyun yönetimi için yönetim panelleri; oyuncu ödülü, sanal para, hediye, seviye ilerlemesi ve açılabilir içerik yönetim sistemleri geliştirdim." data-en="Created administration panels and built player reward, virtual currency, gifting, level progression, and unlockable content management systems.">Oyun yönetimi için yönetim panelleri; oyuncu ödülü, sanal para, hediye, seviye ilerlemesi ve açılabilir içerik yönetim sistemleri geliştirdim.</li>
+          <li data-tr="Google Play satın alma doğrulama servisleri ile otomatik ve manuel oyuncu ödül dağıtım sistemleri geliştirdim." data-en="Implemented Google Play purchase validation services and built automated and manual player reward distribution systems.">Google Play satın alma doğrulama servisleri ile otomatik ve manuel oyuncu ödül dağıtım sistemleri geliştirdim.</li>
+          <li data-tr="Oyuncu profiline göre Unity Ads ve Google Ads servislerinin dinamik olarak etkinleştirilebildiği uzaktan reklam yönetimi altyapısı geliştirdim." data-en="Developed remote advertisement management infrastructure with dynamic activation of Unity Ads and Google Ads based on player profiles.">Oyuncu profiline göre Unity Ads ve Google Ads servislerinin dinamik olarak etkinleştirilebildiği uzaktan reklam yönetimi altyapısı geliştirdim.</li>
+          <li data-tr="Kullanıcı segmentasyonu, kampanya yönetimi ve kullanıcıya özel aksiyon sistemleri oluşturdum." data-en="Implemented user segmentation, campaign management, and user-specific action features.">Kullanıcı segmentasyonu, kampanya yönetimi ve kullanıcıya özel aksiyon sistemleri oluşturdum.</li>
+          <li data-tr="Uygulama güncellemesi gerektirmeden uzaktan oyun konfigürasyonu yapılabilmesini sağlayarak operasyonel değişikliklerde uygulama sürümüne olan bağımlılığı azalttım." data-en="Enabled remote game configuration without application updates, reducing dependency on new app releases for operational changes.">Uygulama güncellemesi gerektirmeden uzaktan oyun konfigürasyonu yapılabilmesini sağlayarak operasyonel değişikliklerde uygulama sürümüne olan bağımlılığı azalttım.</li>
+          <li data-tr="Monetizasyon, oyuncu etkileşimi ve LiveOps süreçlerinin merkezi olarak yönetilebilmesini sağlayan araçlar geliştirdim." data-en="Enabled centralized management of monetization, player engagement, and LiveOps workflows.">Monetizasyon, oyuncu etkileşimi ve LiveOps süreçlerinin merkezi olarak yönetilebilmesini sağlayan araçlar geliştirdim.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span
+            class="role"
+            data-tr="Yüksek Hacimli Mesajlaşma Platformu"
+            data-en="High-Volume Messaging Platform"
+          >Yüksek Hacimli Mesajlaşma Platformu</span>
+        </div>
+
+        <div
+          class="tech"
+          data-tr="Python, Redis, Redis Streams, asenkron işleme, Docker, SQL"
+          data-en="Python, Redis, Redis Streams, asynchronous processing, Docker, SQL"
+        >Python, Redis, Redis Streams, asenkron işleme, Docker, SQL</div>
+
+        <ul>
+          <li data-tr="Yüksek mesaj hacmini işleyebilen Redis tabanlı kuyruk mimarileri ve asenkron işlem pipeline'ları tasarladım." data-en="Designed Redis-based queue architectures and asynchronous processing pipelines capable of handling large message volumes.">Yüksek mesaj hacmini işleyebilen Redis tabanlı kuyruk mimarileri ve asenkron işlem pipeline'ları tasarladım.</li>
+          <li data-tr="Kampanya yönetimi, kullanıcı ve yetki yönetimi, izleme ve raporlama araçları geliştirdim." data-en="Developed campaign management, user and permission management, monitoring, and reporting tools.">Kampanya yönetimi, kullanıcı ve yetki yönetimi, izleme ve raporlama araçları geliştirdim.</li>
+          <li data-tr="Servislerin Docker tabanlı deployment süreçlerini oluşturdum ve backend bileşenlerini sürdürülebilir şekilde paketledim." data-en="Built Docker-based deployment workflows and packaged backend services for maintainable operation.">Servislerin Docker tabanlı deployment süreçlerini oluşturdum ve backend bileşenlerini sürdürülebilir şekilde paketledim.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span
+            class="role"
+            data-tr="Çağrı Otomasyonu Entegrasyonları"
+            data-en="Call Automation Integrations"
+          >Çağrı Otomasyonu Entegrasyonları</span>
+        </div>
+
+        <div
+          class="tech"
+          data-tr="Python, Asterisk, API entegrasyonu, event handling, kampanya akışları"
+          data-en="Python, Asterisk, API integration, event handling, campaign workflows"
+        >Python, Asterisk, API entegrasyonu, event handling, kampanya akışları</div>
+
+        <ul>
+          <li data-tr="Asterisk kullanarak çağrı otomasyonu entegrasyonları ve backend servisleri geliştirdim." data-en="Developed call automation integrations and backend services using Asterisk.">Asterisk kullanarak çağrı otomasyonu entegrasyonları ve backend servisleri geliştirdim.</li>
+          <li data-tr="API üzerinden çağrı kontrolü ve çağrı yönetimi akışları geliştirdim." data-en="Implemented call control integrations and API-driven call management workflows.">API üzerinden çağrı kontrolü ve çağrı yönetimi akışları geliştirdim.</li>
+          <li data-tr="Çağrı olaylarının işlenmesi ve kampanya yürütme süreçleri için event tabanlı servisler geliştirdim." data-en="Built event handling systems and campaign execution workflows for call automation.">Çağrı olaylarının işlenmesi ve kampanya yürütme süreçleri için event tabanlı servisler geliştirdim.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div
+        class="section-title"
+        data-tr="YETKİNLİKLER"
+        data-en="TECHNICAL SKILLS"
+      >YETKİNLİKLER</div>
+
+      <dl class="skills-grid">
+        <dt data-tr="Backend Geliştirme" data-en="Backend Development">Backend Geliştirme</dt>
+        <dd data-tr="Python, Flask, REST API geliştirme, SQLAlchemy, API entegrasyonu" data-en="Python, Flask, REST API Development, SQLAlchemy, API Integration">Python, Flask, REST API geliştirme, SQLAlchemy, API entegrasyonu</dd>
+
+        <dt data-tr="Asenkron Sistemler" data-en="Asynchronous Systems">Asenkron Sistemler</dt>
+        <dd data-tr="Async Programming, Background Workers, Redis, Redis Streams, kuyruk ve işleme pipeline'ları" data-en="Async Programming, Background Workers, Redis, Redis Streams, queue and processing pipelines">Async Programming, Background Workers, Redis, Redis Streams, kuyruk ve işleme pipeline'ları</dd>
+
+        <dt data-tr="Veritabanı" data-en="Database">Veritabanı</dt>
+        <dd data-tr="MySQL, SQL veritabanları, veritabanı tasarımı ve optimizasyonu" data-en="MySQL, SQL databases, database design and optimization">MySQL, SQL veritabanları, veritabanı tasarımı ve optimizasyonu</dd>
+
+        <dt data-tr="DevOps & Sistem" data-en="DevOps & Systems">DevOps &amp; Sistem</dt>
+        <dd data-tr="Docker, Linux, Nginx, Git, deployment ve monitoring" data-en="Docker, Linux, Nginx, Git, deployment and monitoring">Docker, Linux, Nginx, Git, deployment ve monitoring</dd>
+
+        <dt data-tr="Oyun Backend & LiveOps" data-en="Game Backend & LiveOps">Oyun Backend &amp; LiveOps</dt>
+        <dd data-tr="Unity entegrasyonları, mobil oyun backend sistemleri, LiveOps platformları, Google Play entegrasyonları, In-App Purchase doğrulama, reklam yönetim sistemleri" data-en="Unity integrations, mobile game backend systems, LiveOps platforms, Google Play integrations, In-App Purchase validation, ad management systems">Unity entegrasyonları, mobil oyun backend sistemleri, LiveOps platformları, Google Play entegrasyonları, In-App Purchase doğrulama, reklam yönetim sistemleri</dd>
+
+        <dt data-tr="Entegrasyonlar" data-en="Integrations">Entegrasyonlar</dt>
+        <dd data-tr="Asterisk, API tabanlı çağrı yönetimi, event handling" data-en="Asterisk, API-driven call management, event handling">Asterisk, API tabanlı çağrı yönetimi, event handling</dd>
+
+        <dt data-tr="Mimari" data-en="Architecture">Mimari</dt>
+        <dd data-tr="Sistem mimarisi tasarımı, ölçeklenebilir backend servisleri, gerçek zamanlı sistemler, yönetim panelleri" data-en="System architecture design, scalable backend services, real-time systems, administration panels">Sistem mimarisi tasarımı, ölçeklenebilir backend servisleri, gerçek zamanlı sistemler, yönetim panelleri</dd>
+
+        <dt data-tr="Diğer" data-en="Additional">Diğer</dt>
+        <dd data-tr="Trading Data Analysis" data-en="Trading Data Analysis">Trading Data Analysis</dd>
+      </dl>
+    </section>
+
+    <section class="section">
+      <div
+        class="section-title"
+        data-tr="DİLLER"
+        data-en="LANGUAGES"
+      >DİLLER</div>
+
+      <div class="lang-list">
+        <span data-tr="<strong>Türkçe</strong> — Ana dil" data-en="<strong>Turkish</strong> — Native"><strong>Türkçe</strong> — Ana dil</span>
+        <span data-tr="<strong>İngilizce</strong> — Mesleki çalışma yeterliliği" data-en="<strong>English</strong> — Professional Working Proficiency"><strong>İngilizce</strong> — Mesleki çalışma yeterliliği</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const translatableElements = document.querySelectorAll("[data-tr][data-en]");
+
+    function setLanguage(language) {
+      const selectedLanguage = language === "en" ? "en" : "tr";
+
+      translatableElements.forEach((element) => {
+        const content = element.dataset[selectedLanguage];
+        if (content !== undefined) {
+          element.innerHTML = content;
+        }
+      });
+
+      document.documentElement.lang = selectedLanguage;
+
+      document.querySelectorAll("[data-language]").forEach((button) => {
+        const isActive = button.dataset.language === selectedLanguage;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      localStorage.setItem("cv-language", selectedLanguage);
+    }
+
+    document.querySelectorAll("[data-language]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.language));
+    });
+
+    setLanguage(localStorage.getItem("cv-language") || "tr");
+  </script>
+</body>
+</html>
